@@ -2,6 +2,8 @@ from selenium import webdriver                                   # main module o
 from selenium.webdriver.firefox.service import Service           # class to manage lifecycle of browserdriver exe 
 from webdriver_manager.firefox import GeckoDriverManager         # class to download/retrieve COMPATIBLE geckodriver
 
-spy = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
+path = GeckoDriverManager().install()
+# print(path)
+spy = webdriver.Firefox(service=Service(path))
 
-spy.get("https://")
+spy.quit()
