@@ -3,7 +3,11 @@ from selenium.webdriver.firefox.service import Service           # class to mana
 from webdriver_manager.firefox import GeckoDriverManager         # class to download/retrieve COMPATIBLE geckodriver
 
 path = GeckoDriverManager().install()
-# print(path)
+print(path)
 spy = webdriver.Firefox(service=Service(path))
 
+spy.get("https://www.selenium.dev/documentation/")
+title = spy.title
+i = title.find("Selenium")
+print (title[i:i+len("Selenium")]))
 spy.quit()
