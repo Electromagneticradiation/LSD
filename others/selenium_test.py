@@ -6,8 +6,11 @@ path = GeckoDriverManager().install()
 print("\n",path,"\n")
 spy = webdriver.Firefox(service=Service(path))
 
-spy.get("https://www.selenium.dev/documentation/")
+spy.get("https://mononoke.fandom.com/")
 title = spy.title
-i = title.find("Selenium")
-print(title[i:i+len("Selenium")])
+url = spy.current_url
+
+print(title)
+print (url)
+
 spy.quit()
